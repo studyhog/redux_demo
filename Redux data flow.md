@@ -1,13 +1,15 @@
-# Strict unidirectional data flow.
+# Data lifecycle in Redux
 
-## Data lifecycle in Redux:
+## Redux has a strict unidirectional data flow
 1. Call `store.dispatch(action)`.
    Can be called from anywhere in the app, including components and XHR callbacks, or even at scheduled intervals
-    * action - plain object describing what happened:
+    * action - plain object describing what happened (action can be thought of as a brief snippet of news - i.e. "Mary liked article 42"):
+
+    ```javascript
       { type: 'LIKE_ARTICLE', articleId: 42 }
       { type: 'FETCH_USER_SUCCESS', response: { id: 3, name: 'Mary' } }
       { type: 'ADD_TODO', text: 'Follow along Redux tutorial' }
-     (action can be thought of as a brief snippet of news - i.e. "Mary liked article 42")
+    ```
      
 2. Redux store calls the reducer function you gave it. Store will pass two arguments (current state, and the action).
    Reducer is a *pure* function, it must only compute the next state. Calling it with the same inputs repeatedly, should always produce the same output.
