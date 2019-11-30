@@ -81,12 +81,17 @@ function todos(state = [], action) {
     switch (action.type) {
         case ADD_TODO:
             return [
-                ...state, {text: action.text, completed: false}
+                ...state,
+                {
+                    id: action.id,
+                    text: action.text,
+                    completed: false
+                }
             ];
         case TOGGLE_TODO:
-            return state.map((todo, index) => {
+            return state.map(todo => {
                 // create a new todo for the item to be edited
-                if (index === action.index) {
+                if (todo.id === action.id) {
                     return Object.assign({}, todo, {completed: !todo.completed})
                 }
                 return todo;

@@ -20,6 +20,7 @@ export const VisibilityFilters = {
 // you send them to the store using store.dispatch.
 
 
+let nextTodoId = 0;
 // action creators are functions that create actions. Action creators simply return an action
 export function addTodo(text) {
     return {
@@ -28,10 +29,10 @@ export function addTodo(text) {
     }
 }
 
-export function toggleTodo(index) {
+export function toggleTodo(id) {
     return {
         type: TOGGLE_TODO,
-        index
+        id
     }
 }
 

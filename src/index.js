@@ -21,7 +21,7 @@
 
 // You have only a single store in a Redux application. Split data handling using reducer composition (see reducers.js)
 // You may optionally specify the initial state as second argument to createStore() (this may come in handy later)
-// const store = createStore(todoApp, window.STATE_FROM_SERVER);
+// // const store = createStore(todoApp, window.STATE_FROM_SERVER);
 // import { createStore } from 'redux'
 // import todoApp from './reducers'
 //
